@@ -98,7 +98,7 @@ export async function signUp(
   }
 }
 
-export async function signInWithGoogle(userData: any, callback: any) {
+export async function signInWithGoogle(userData: any): Promise<any> {
   try {
     const q = query(
       collection(db, "users"),
@@ -112,24 +112,24 @@ export async function signInWithGoogle(userData: any, callback: any) {
     if (data.length > 0) {
       userData.role = data[0].role;
       await updateUser(data[0].id, userData);
-      callback({
+      return {
         status: true,
         message: "User registered and logged in with Google",
         data: userData,
-      });
+      };
     } else {
       userData.role = "member";
       const result = await createUser(userData);
-      callback({
+      return {
         status: result.status,
         message: "User registered and logged in with Google",
         data: userData,
-      });
+      };
     }
   } catch (error: any) {
-    callback({
+    return {
       status: false,
       message: "Failed to register user with Google",
-    });
+    };
   }
 }

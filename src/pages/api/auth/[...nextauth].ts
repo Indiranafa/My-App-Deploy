@@ -66,16 +66,14 @@ export const authOptions: NextAuthOptions = {
           image: user.image,
           type: account.provider,
         };
-
-        await signInWithGoogle(data, (result: any) => {
-          if (result.status) {
-            token.fullname = result.data.fullname;
-            token.email = result.data.email;
-            token.image = result.data.image;
-            token.type = result.data.type;
-            token.role = result.data.role;
-          }
-        });
+        const result = await signInWithGoogle(data);
+        if (result.status) {
+          token.fullname = result.data.fullname;
+          token.email = result.data.email;
+          token.image = result.data.image;
+          token.type = result.data.type;
+          token.role = result.data.role;
+        }
       }
       return token;
     },
