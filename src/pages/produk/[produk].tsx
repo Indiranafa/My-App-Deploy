@@ -12,7 +12,7 @@ export default function ProdukDetailPage({ product }: ProdukDetailPageProps) {
 }
 
 export async function getServerSideProps({ params }: { params: { produk: string } }) {
-  const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
   const res = await fetch(`${apiUrl}/api/produk/${params.produk}`);
   const response = await res.json();
 
