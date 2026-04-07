@@ -60,12 +60,39 @@
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .produkdetail {
         flex-direction: column;
-
+        gap: 24px;
+        padding: 16px;
         &__image {
-            margin-bottom: 20px;
+            margin-bottom: 18px;
+        }
+        &__info {
+            align-items: center;
+            text-align: center;
+        }
+        &__name {
+            font-size: 22px;
+        }
+        &__price {
+            font-size: 18px;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .produkdetail {
+        padding: 8px;
+        gap: 12px;
+        &__image {
+            margin-bottom: 12px;
+        }
+        &__name {
+            font-size: 18px;
+        }
+        &__price {
+            font-size: 15px;
         }
     }
 }

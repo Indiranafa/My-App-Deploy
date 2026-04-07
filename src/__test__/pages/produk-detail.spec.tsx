@@ -9,7 +9,7 @@ jest.mock('swr', () => () => ({
   data: { id: "1", name: "Produk A", price: 10000, image: "/image-a.jpg", category: "Kategori A" },
   error: null,
 }));
-import ProdukDetailPage from "@/pages/produk/[id]";
+import ProdukDetailPage from "@/pages/produk/[produk]";
 
 describe("ProdukDetailPage", () => {
   it("renders product detail", () => {

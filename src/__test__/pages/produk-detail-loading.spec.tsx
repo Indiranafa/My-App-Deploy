@@ -9,7 +9,7 @@ jest.mock('swr', () => () => ({
   data: null,
   error: null,
 }));
-import ProdukDetailPage from "@/pages/produk/[id]";
+import ProdukDetailPage from "@/pages/produk/[produk]";
 
 describe("ProdukDetailPage loading", () => {
   it("renders loading state", () => {

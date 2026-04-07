@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import ProdukPage from "@/pages/produk";
-import ProdukDetailPage from "@/pages/produk/[id]";
+import ProdukDetailPage from "@/pages/produk/[produk]";
 
 jest.mock('next/router', () => ({
   useRouter: () => ({
